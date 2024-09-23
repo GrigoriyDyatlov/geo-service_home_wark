@@ -15,18 +15,18 @@ import ru.netology.sender.MessageSenderImpl;
 import java.util.Map;
 
 public class MessageSenderImplTests {
-@Mock
-GeoServiceImpl geoService;
-@Mock
-LocalizationServiceImpl localizationService;
+    @Mock
+    GeoServiceImpl geoService;
+    @Mock
+    LocalizationServiceImpl localizationService;
 
     @Test
     public void sendTestWithMockitoRussiaIp() {
         String ip = "172.0.32.11";
         GeoService geoServiceImpl = Mockito.mock(GeoServiceImpl.class);
-Mockito.when(geoServiceImpl.byIp(ip)).thenReturn(new Location("Moscow", Country.RUSSIA, null, 0));
-LocalizationService localizationServiceImpl = Mockito.mock(LocalizationServiceImpl.class);
-Mockito.when(localizationServiceImpl.locale(Country.RUSSIA)).thenReturn("Добро пожаловать");
+        Mockito.when(geoServiceImpl.byIp(ip)).thenReturn(new Location("Moscow", Country.RUSSIA, null, 0));
+        LocalizationService localizationServiceImpl = Mockito.mock(LocalizationServiceImpl.class);
+        Mockito.when(localizationServiceImpl.locale(Country.RUSSIA)).thenReturn("Добро пожаловать");
 
 
         Map<String, String> header = Map.of(
