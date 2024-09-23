@@ -10,8 +10,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.11.0'
+// https://mvnrepository.com/artifact/org.jukito/jukito-parent
+    implementation group: 'org.jukito', name: 'jukito-parent', version: '1.5', ext: 'pom'
+// https://mvnrepository.com/artifact/org.mockito/mockito-core
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.13.0'
+
 }
 
 test {
